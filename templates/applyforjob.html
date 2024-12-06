@@ -1,0 +1,44 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'user_navigation.html' %}
+
+
+<h2 style="padding-left: 42%;">Apply For Job</h2>
+<hr>
+<div class="container shadow-lg py-2 mb-2">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form_row">
+        <label class="font-weight-bold">Upload Your Resume</label>
+        <input type="file" class="form-control" name="resume">
+        
+
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-success mt-4">
+</form>
+</div>
+
+
+{% include 'footer.html' %}
+{% if error == "close" %}
+<script>
+    window.location = ('{% url "user_latestjobs" %}')
+
+</script>
+{% endif %}
+{% if error == "notopen" %}
+<script>
+    window.location = ('{% url "user_latestjobs" %}')
+
+</script>
+{% endif %}
+{% if error == "done" %}
+<script>
+    window.location = ('{% url "user_latestjobs" %}')
+
+</script>
+{% endif %}
+{% endblock %}

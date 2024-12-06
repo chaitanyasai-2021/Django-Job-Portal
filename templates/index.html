@@ -1,0 +1,460 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+<link rel="stylesheet" href="{% static 'css/newstyle.css' %}">
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<div class="index">
+    <section class="img-bg">
+        <div class="search-area">
+          <div class="search-bg">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+    
+                  <div class="section-top">
+                    <form action="#" class="d-md-flex justify-content-between">
+                      <input class="form-control mr-0" style="height: auto;" list="browsers" placeholder="All category" name="browser" id="browser">
+                      <datalist id="browsers">
+                        <option value="Part Time">
+                        <option value="Full Time">
+                        <option value="Remote">
+                        <option value="Office Job">
+                      </datalist> 
+                      <input class="form-control mr-0" style="height: auto;" list="city" placeholder="select location" name="browser" id="browser">
+                      <datalist id="city">
+                        <option value="Bangalore">
+                        <option value="Pune">
+                        <option value="Mumbai">
+                        <option value="Chennai">
+                      </datalist> 
+                      <input type="text" placeholder="Search Keyword" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'" required>
+                      <button type="submit" class="template-btn">find job</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="jobs-area section-padding3">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="jobs-title">
+                <h2 class="text-center mt-0" style="color: #005a38;">Browse recent jobs</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="jobs-tab tab-item">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#recent" role="tab" aria-controls="home" aria-selected="true">recent</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#full-time" role="tab" aria-controls="profile" aria-selected="false">full time</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#part-time" role="tab" aria-controls="part-time" aria-selected="false">part time</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab2" data-toggle="tab" href="#intern" role="tab" aria-controls="intern" aria-selected="false">intern</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab2" data-toggle="tab" href="#intern" role="tab" aria-controls="intern" aria-selected="false">intern</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab2" data-toggle="tab" href="#intern" role="tab" aria-controls="intern" aria-selected="false">intern</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="contact-tab2" data-toggle="tab" href="#intern" role="tab" aria-controls="intern" aria-selected="false">intern</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="recent" role="tabpanel" aria-labelledby="home-tab">
+                  <div class="single-job mb-4 d-lg-flex justify-content-between">
+                    <div class="job-text">
+                      <h4>Assistant Executive - Production/ Quality Control</h4>
+                      <ul class="mt-4">
+                        <li class="mb-3">
+                          <h5><i class="fa fa-map-marker"></i> new yourk, USA</h5>
+                        </li>
+                        <li class="mb-3">
+                          <h5><i class="fa fa-pie-chart"></i> Applied Chemistry & Chemical Engineering / Chemistry</h5>
+                        </li>
+                        <li>
+                          <h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="job-img align-self-center">
+                      <img src="{% static 'images/job1.png' %}" alt="job">
+                    </div>
+                    <div class="job-btn align-self-center">
+                      <a href="{% url 'latest_jobs' %}" class="third-btn job-btn1">full time</a>
+                      <a href="{% url 'latest_jobs' %}" class="third-btn">apply</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="full-time" role="tabpanel" aria-labelledby="profile-tab">
+                  <div class="single-job mb-4 d-lg-flex justify-content-between">
+                    <div class="job-text">
+                      <h4>Asst. Manager, Production (Woven Dyeing)</h4>
+                      <ul class="mt-4">
+                        <li class="mb-3">
+                          <h5><i class="fa fa-map-marker"></i> new yourk, USA</h5>
+                        </li>
+                        <li class="mb-3">
+                          <h5><i class="fa fa-pie-chart"></i> Applied Chemistry & Chemical Engineering / Chemistry</h5>
+                        </li>
+                        <li>
+                          <h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="job-img align-self-center">
+                      <img src="{% static 'images/job2.png' %}" alt="job">
+                    </div>
+                    <div class="job-btn align-self-center">
+                      <a href="{% url 'latest_jobs' %}" class="third-btn job-btn2">full time</a>
+                      <a href="{% url 'latest_jobs' %}" class="third-btn">apply</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="part-time" role="tabpanel" aria-labelledby="contact-tab">
+                  <div class="single-job mb-4 d-lg-flex justify-content-between">
+                    <div class="job-text">
+                      <h4>Deputy Manager/ Assistant Manager - Footwear</h4>
+                      <ul class="mt-4">
+                        <li class="mb-3">
+                          <h5><i class="fa fa-map-marker"></i> new yourk, USA</h5>
+                        </li>
+                        <li class="mb-3">
+                          <h5><i class="fa fa-pie-chart"></i> Applied Chemistry & Chemical Engineering / Chemistry</h5>
+                        </li>
+                        <li>
+                          <h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="job-img align-self-center">
+                      <img src="{% static 'images/job3.png' %}" alt="job">
+                    </div>
+                    <div class="job-btn align-self-center">
+                      <a href="{% url 'latest_jobs' %}" class="third-btn job-btn3">full time</a>
+                      <a href="{% url 'latest_jobs' %}" class="third-btn">apply</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="intern" role="tabpanel" aria-labelledby="contact-tab2s">
+                  <div class="single-job mb-4 d-lg-flex justify-content-between">
+                    <div class="job-text">
+                      <h4>R&D Manager (Technical Lab Department)</h4>
+                      <ul class="mt-4">
+                        <li class="mb-3">
+    
+                      </ul>
+                    </div>
+                    <div class="job-img align-self-center">
+                      <img src="{% static 'images/job4.png' %}" alt="job">
+                    </div>
+                    <div class="job-btn align-self-center">
+                      <a href="{% url 'latest_jobs' %}" class="third-btn job-btn4">full time</a>
+                      <a href="{% url 'latest_jobs' %}" class="third-btn">apply</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+          <div class="more-job-btn text-center">
+            <a href="{% url 'latest_jobs' %}" class="template-btn mb-0">more job post</a>
+          </div>
+        </div>
+      </section>      
+        <div class="single mt-0">  
+          <div class="col-md-4">
+                <div class="col_3">
+                    <h3 style="background-color: #005a38; color: #ffffff;" class="p-3">Todays Jobs</h3>
+                    <ul class="list_1">
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >Department of Health - Western Australia</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >Australian Nursing Agency currently require experiences</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >Russia Nursing Agency currently require experiences</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >The Government of Western Saudi Arbia</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >Department of Health - Western Australia</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >Australian Nursing Agency currently require experiences</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >Russia Nursing Agency currently require experiences</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >The Scientific Publishing Services in Saudi Arbia</a></li>	
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >BPO Private Limited in Canada</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >Executive Tracks Associates in Pakistan</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;" >Pyramid IT Consulting Pvt. Ltd. in Pakistan</a></li>						
+                    </ul>
+                </div>
+                <div class="col_3">
+                 <h3 style="background-color: #005a38; color: #ffffff;" class="p-3">Jobs by Category</h3>
+                 <ul class="list_2">
+                     <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Railway Recruitment</a></li>
+                     <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Air Force Jobs</a></li>		
+                     <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Police Jobs</a></li>
+                     <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Intelligence Bureau Jobs</a></li>		
+                     <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Army Jobs</a></li>
+                     <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Navy Jobs</a></li>		
+                     <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Software Jobs</a></li>	
+                     <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Research Jobs</a></li>								
+                 </ul>
+             </div>
+                <div class="col_3">
+                    <h3 style="background-color: #005a38; color: #ffffff;" class="p-3">Jobs by Category</h3>
+                    <ul class="list_2">
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Railway Recruitment</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Air Force Jobs</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Police Jobs</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Intelligence Bureau Jobs</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Army Jobs</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Navy Jobs</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Software Jobs</a></li>	
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Research Jobs</a></li>								
+                    </ul>
+                </div>
+                <div class="col_3">
+                    <h3 style="background-color: #005a38; color: #ffffff;" class="p-3">Jobs by Category</h3>
+                    <ul class="list_2">
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Railway Recruitment</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Air Force Jobs</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Police Jobs</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Intelligence Bureau Jobs</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Army Jobs</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Navy Jobs</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Software Jobs</a></li>	
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Research Jobs</a></li>								
+                    </ul>
+                </div>
+                <div class="col_3">
+                    <h3 style="background-color: #005a38; color: #ffffff;" class="p-3">Jobs by Category</h3>
+                    <ul class="list_2">
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Railway Recruitment</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Air Force Jobs</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Police Jobs</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Intelligence Bureau Jobs</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Army Jobs</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Navy Jobs</a></li>		
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Software Jobs</a></li>	
+                        <li><a href="#" style="text-decoration: none; color: #000000; font-weight: 500;">Research Jobs</a></li>								
+                    </ul>
+                </div>
+                <div class="widget">
+               <h3 style="background-color: #005a38; color: #ffffff;" class="p-3">Take The Job Portal Poll!</h3>
+                   <div class="widget-content"> 
+                    <div class="Job Portal-answer">
+                       <span class="Job Portal-answer-group">
+                           <span class="Job Portal-answer-input">
+                              <input class="Job Portal-radiobutton" type="radio">
+                           </span>
+                           <label for="" class="Job Portal-input-label">
+                               <span class="Job Portal-answer-span">Frequently</span>
+                           </label>
+                       </span>
+                       <span class="Job Portal-answer-group">
+                           <span class="Job Portal-answer-input">
+                              <input class="Job Portal-radiobutton" type="radio">
+                           </span>
+                           <label for="" class="Job Portal-input-label">
+                               <span class="Job Portal-answer-span">Interviewing</span>
+                           </label>
+                       </span>
+                       <span class="Job Portal-answer-group">
+                           <span class="Job Portal-answer-input">
+                              <input class="Job Portal-radiobutton" type="radio">
+                           </span>
+                           <label for="" class="Job Portal-input-label">
+                               <span class="Job Portal-answer-span">Leaving a familiar workplace</span>
+                           </label>
+                       </span>
+                       <div class="Job Portal_vote">
+                         <a class="Job Portal-vote-button">Vote</a>
+                       </div>
+                    </div>
+                  </div>
+           </div>
+        </div>
+          <div class="col-md-8">
+             <div class="col_1 mb-5">
+                  <div class="col-sm-4 row_2">
+                   <a href="single.html"><img src="{% static 'images/a1.jpg' %}" class="img-responsive" alt=""/></a>
+               </div>
+               <div class="col-sm-8 row_1">
+                   <h4><a href="single.html">It is a long established fact over the scope of jobs</a></h4>
+                   <h6>SIt is a long <span class="dot">·</span> Jul. 31, 2021</h6>
+                   <p style="font-size: large;" class="mb-2">Getting job is getting difficult over the years has been difficult and has been changing over the years for future improvement</p>
+                   <div class="social">	
+                       <a class="btn_1 ml-2" href="#">
+                           <i class="fa fa-facebook fb"></i>
+                           <span>Share</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-twitter tw"></i>
+                           <span class="share1">Tweet</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-google-plus google"></i>
+                           <span class="share1 google">Share</span>
+                       </a>
+                  </div>
+               </div>
+               <div class="clearfix"> </div>
+              </div>
+              <div class="col_1 mb-5">
+                   <div class="col-sm-4 row_2">
+                   <a href="single.html"><img src="{% static 'images/a2.jpg' %}" class="img-responsive" alt=""/></a>
+               </div>
+               <div class="col-sm-8 row_1">
+                   <h4><a href="single.html">Planing and practicsing for future jobs and recruitment </a></h4>
+                   <h6>SIt is a long <span class="dot">·</span> Aug. 31, 2021</h6>
+                   <p style="font-size: large;"> You should write your tasks in a schedule.Designing has to be in a way that each task gets enough time. Your work should have the highest priority. The second priority should sleep. 
+    And the last but not the least your social life. Your social life includes family and friends.
+    In order to live a happy and peaceful life socializing is important.</p>
+                   <div class="social">	
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-facebook fb"></i>
+                           <span class="share1 fb">Share</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-twitter tw"></i>
+                           <span class="share1">Tweet</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-google-plus google"></i>
+                           <span class="share1 google">Share</span>
+                       </a>
+                  </div>
+               </div>
+               <div class="clearfix"> </div>
+              </div>
+              <div class="col_1 mb-5">
+                  <div class="col-sm-4 row_2">
+                   <a href="single.html"><img src="{% static 'images/a3.jpg' %}" class="img-responsive" alt=""/></a>
+               </div>
+               <div class="col-sm-8 row_1">
+                   <h4><a href="single.html">There are many variations and choosing the best job for your favourite career </a></h4>
+                   <h6>SIt is a long <span class="dot">·</span> Oct. 31, 2020</h6>
+                   <p style="font-size: large;">Career is the most important part of one's life. To put bread on your dining table, to gain respect from the society and for your self-satisfaction, a good career is a must.</p>
+                   <div class="social">	
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-facebook fb"></i>
+                           <span class="share1 fb">Share</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-twitter tw"></i>
+                           <span class="share1">Tweet</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-google-plus google"></i>
+                           <span class="share1 google">Share</span>
+                       </a>
+                  </div>
+               </div>
+               <div class="clearfix"> </div>
+              </div>
+              <div class="col_1 mb-5">
+                   <div class="col-sm-4 row_2">
+                   <a href="single.html"><img src="{% static 'images/a4.jpg' %}" class="img-responsive" alt=""/></a>
+               </div>
+               <div class="col-sm-8 row_1">
+                   <h4><a href="single.html">Contrary to popular belief and myths about getting a job</a></h4>
+                   <h6>SIt is a long <span class="dot">·</span> Nov. 31, 2020</h6>
+                   <p style="font-size: large;">Figuring out how to find work can feel like an epic quest, full of smoke, mirrors, and plenty of perplexities—including some falsehoods that are meant to throw you off your game. 
+                       These job search myths are tricky beasts. Even experienced job seekers believe—and spread—common misconceptions about the job search process. </p>
+                   <div class="social">	
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-facebook fb"></i>
+                           <span class="share1 fb">Share</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-twitter tw"></i>
+                           <span class="share1">Tweet</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-google-plus google"></i>
+                           <span class="share1 google">Share</span>
+                       </a>
+                  </div>
+               </div>
+               <div class="clearfix"> </div>
+              </div>
+              <div class="col_1 mb-5">
+                   <div class="col-sm-4 row_2">
+                   <a href="single.html"><img src="{% static 'images/a5.jpg' %}" class="img-responsive" alt=""/></a>
+               </div>
+               <div class="col-sm-8 row_1">
+                   <h4><a href="single.html">Work Culture </a></h4>
+                   <h6>SIt is a long <span class="dot">·</span> Jul. 31, 2015</h6>
+                   <p style="font-size: large;">When choosing a job or trying to maintain effective operations, it's important to consider the work environment of a company, which is the collection of situational factors that form the corporate atmosphere.</p>
+                   <div class="social">	
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-facebook fb"></i>
+                           <span class="share1 fb">Share</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-twitter tw"></i>
+                           <span class="share1">Tweet</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-google-plus google"></i>
+                           <span class="share1 google">Share</span>
+                       </a>
+                  </div>
+               </div>
+               <div class="clearfix"> </div>
+              </div>
+              <div class="col_2">
+                   <div class="col-sm-4 row_2">
+                   <a href="single.html"><img src="{% static 'images/a6.jpg' %}" class="img-responsive" alt=""/></a>
+               </div>
+               <div class="col-sm-8 row_1">
+                   <h4><a href="single.html">Jobs vs Market</a></h4>
+                   <h6>SIt is a long <span class="dot">·</span> Jul. 31, 2015</h6>
+                   <p>The job market can grow or shrink depending on the demand for labor and the available supply of workers within the overall economy. 
+                       Other factors which impact the market are the needs of a specific industry, the need for a particular education level or skill set, and required job functions. 
+                       The job market is a significant component of any economy and is directly tied in with the demand for goods and services.</p>
+                   <div class="social">	
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-facebook fb"></i>
+                           <span class="share1 fb">Share</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-twitter tw"></i>
+                           <span class="share1">Tweet</span>								
+                       </a>
+                       <a class="btn_1" href="#">
+                           <i class="fa fa-google-plus google"></i>
+                           <span class="share1 google">Share</span>
+                       </a>
+                  </div>
+                 </div>
+               <div class="clearfix"> </div>
+              </div>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}

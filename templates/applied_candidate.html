@@ -1,0 +1,87 @@
+{% load static %} {% block body %} {% include 'recruiter_navigation.html' %}
+<!-- <link rel="stylesheet" href="{% static 'css/style2.css' %}"> -->
+<style>
+  tr {
+    text-align: center;
+  }
+  .rating-list li {
+    float: right;
+    color: #ddd;
+    padding: 10px 5px;
+  }
+
+  .rating-list li:hover,
+  .rating-list li:hover ~ li {
+    color: orange;
+  }
+  .rating-list {
+    display: inline-block;
+    list-style: none;
+  }
+  .checked {
+      color: orange;
+  }
+</style>
+
+<h2 style="padding-left: 42%">Applied Candidate List</h2>
+<hr />
+<div class="container">
+  <table class="table table-hover shadow-lg" id="example">
+    <thead>
+      <tr style="background-color: #00492d; color: aliceblue">
+        <th>Serial No.</th>
+        <th>Student Name</th>
+        <th>Contact No.</th>
+        <th>Email-id</th>
+        <th>Job Title</th>
+        <th>Company</th>
+        <th>Resume</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for i in data %} {% if request.user.id == i.job.recruiter.user.id %}
+      <tr style="background-color: #ffffff">
+        <td>{{forloop.counter}}</td>
+        <td>{{i.student.user.first_name}} {{i.student.user.last_name}}</td>
+        <td>{{i.student.mobile}}</td>
+        <td>{{i.student.user.username}}</td>
+        <td>{{i.job.tittle}}</td>
+        <td>{{i.job.recruiter.company}}</td>
+        <td><a href="{{i.resume.url}}" target="_blank">View Resume</a></td>
+        <td>
+          <ul class="btn btn-light list-inline rating-list">
+            <li onclick="rate(5)">
+                <i class="fa fa-star"title="Rate 5"></i></li>
+            <li onclick="rate(4)">
+                <i class="fa fa-star"title="Rate 4"></i></li>
+            <li onclick="rate(3)">
+                <i class="fa fa-star"title="Rate 3"></i></li>
+            <li onclick="rate(2)">
+                <i class="fa fa-star"title="Rate 2"></i></li>
+            <li onclick="rate(1)">
+                <i class="fa fa-star"title="Rate 1"></i></li>
+          </ul>
+        </td>
+      </tr>
+
+      {% endif %} {% endfor%}
+    </tbody>
+  </table>
+</div>
+<script>
+  const rate = (rating, post_id) => {
+      fetch(`/rate/${post_id}/${rating}/`, {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      }).then(rest => {
+          window.location.reload();
+          // you may want to update the rating here
+          // to simplify stuff, I just reload the page
+      })
+  }
+</script>
+{% include 'footer.html' %} {% endblock %}

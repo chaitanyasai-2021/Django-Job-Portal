@@ -1,0 +1,81 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'user_navigation.html' %}
+<style>
+    .xd{
+        height: 40px; width: 250px;background-color: #005a38; color: #fff; border-radius: 8px;
+        transition: 1s;
+    }
+    .xd:hover{
+        transition: 1s;
+        font-weight: bolder;
+        border: 2px solid #005a38;
+        background-color: #fff;
+        color: #005a38;
+    }
+</style>
+
+<form class="container mt-5 shadow-lg p-3" name="signup" method="post" enctype="multipart/form-data">
+ {% csrf_token %}
+ <h2 class="mx-auto">Your Profile</h2>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label><b>First Name</b></label>
+        <input type="text" class="form-control" name="fname" value="{{student.user.first_name}}">
+    </div>
+    <div class="form-group col-md-6">
+        <label><b>Last Name</b></label>
+        <input type="text" class="form-control" name="lname" value="{{student.user.last_name}}">
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-12">
+        <label><b>Contact Number</b></label>
+        <input type="text" class="form-control" name="contact" value="{{student.mobile}}">
+    </div>
+</div>
+
+ <div class="form-row">
+    <div class="form-group col-md-12">
+        <label><b>Email Address</b></label>
+        <input type="email" class="form-control" name="email" value="{{student.user.username}}">
+    </div>
+
+ </div>
+
+<div class="form-row">
+    <div class="form-group col-md-12">
+        <label><b>Profile Picture</b></label>
+        <input type="file" class="form-control" name="image" accept="image/*">
+
+    </div>
+</div>
+
+ </div>
+
+ <div class="mt-2 mb-3 text-center">
+    <img src="{{student.image.url}}" width="150px" height="160px"> 
+ </div>
+<input type="submit" value="update profile" class="btn xd d-block mx-auto">
+   <!-- <input type="submit" value="Update Profile" style="margin-top:2%; margin-left: 35%; color:rgb(255, 255, 255); background-color:#005a38; height:60px; width:300px; font-size:25px; border-radius:50px"> -->
+   </form>
+
+   
+               
+
+{% include 'footer.html' %}
+{% if error == "no" %}
+<script>
+    alert("Profile Updated Successfully.");
+    window.location = ('{% url "user_dashboard" %}')
+
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert("Somthing Went Wrong, Try again.....");
+</script>
+{% endif %}
+{% endblock %}
