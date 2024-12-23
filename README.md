@@ -21,23 +21,37 @@ The **Job Portal System** is a web application developed using the Django framew
 ## Screenshots
 Below are some screenshots showcasing key pages of the application:
 
-1. **Admin Dashboard**
+---
+
+### 1. **Admin Dashboard**
    ![Admin Dashboard](Screenshots/admin_dashboard.jpg)
 
-2. **Recruit Dashboard**
+---
+
+### 2. **Recruit Dashboard**
    ![Recruit Dashboard](Screenshots/recruit_dashboard.jpg)
 
-3. **Job Seeker Dashboard**
+---
+
+### 3. **Job Seeker Dashboard**
    ![Job Seeker Dashboard](Screenshots/job_seeker_dashboard.jpg)
 
-4. **Login Page**
+---
+
+### 4. **Login Page**
    ![Login Page](Screenshots/login_page.jpg)
 
-5. **Latest Jobs**
+---
+
+### 5. **Latest Jobs**
    ![Latest Jobs](Screenshots/latest_jobs.jpg)
 
-6. **Homepage**
+---
+
+### 6. **Homepage**
    ![Homepage](Screenshots/homepage.jpg)
+
+---
 
 ## System Requirements
 ### Server Requirements:
